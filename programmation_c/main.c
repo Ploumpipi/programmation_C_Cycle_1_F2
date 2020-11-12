@@ -32,11 +32,21 @@ int main()
 
     //bool bln_booleen;
     //opérateurs
-    int n_a=0;
+    int n_a=255;
     int n_b=0;
 
-    printf ("%d", (n_a>=n_b));
-
+    //printf ("%d", (n_a>=n_b));
+    //ECRIRE
+    printf ("val de n_a : %d\n",n_a);
+    printf ("val de n_b : %d\n",n_b);
+    printf ("val de n_a : %d et n_b : %d\n",n_a,n_b);
+    printf ("val de n_a : %x et n_b : %x\n",n_a,n_b);
+    //LIRE
+    printf ("Saisir un entier dans n_a\n");
+    scanf ("%d",&n_a);
+    printf ("Saisir un entier dans n_b\n");
+    scanf ("%d",&n_b);
+    printf ("val de n_a : %d et n_b : %d\n",n_a,n_b);
     //<=
     //>=
     //== égalité
