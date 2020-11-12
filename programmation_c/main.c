@@ -47,6 +47,7 @@ int main()
     printf ("Saisir un entier dans n_b\n");
     scanf ("%d",&n_b);
     printf ("val de n_a : %d et n_b : %d\n",n_a,n_b);
+
     //<=
     //>=
     //== égalité
