@@ -1,74 +1,56 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define TAILLE 100
 
+//const int TAILLE =100;
 int main()
 {
-    /* Commentaire paragraphe */
-    //Commentaire ligne
+    //Exemple
+    int n_a=0,n_b=0;
+    char c_car='a';
+    float flt_f=0.0;
+    int n_test=0;
+    //float flt_test;
 
-    //unsigned : non signé, ex : unsigned short sn_entier
-    //integer
-    short sn_entier;
-    int n_entier;
-    long l_entier;
+    //int n_t=TAILLE;
 
-    printf("Taille en octet du short : %d\n",sizeof(sn_entier));
-    printf("Taille en octet de entier : %d\n",sizeof(n_entier));
-    printf("Taille en octet du long : %d\n",sizeof(l_entier));
 
-    //reel
-    //unsigned : non signé, ex : unsigned float sn_entier
-    float flt_reel;
-    double dbl_reel;
-    long double ldbl_reel;
+    printf("Bonjour\n");
+    printf("Programme exemple\n");
 
-    printf("Taille en octet du float : %d\n",sizeof(flt_reel));
-    printf("Taille en octet de double : %d\n",sizeof(dbl_reel));
-    printf("Taille en octet du long double : %d\n",sizeof(ldbl_reel));
+    printf("n_a : %d\n",n_a);
+    printf("n_b : %d\n",n_b);
+    printf("c_car : %c\n",c_car);
+    printf("flt_f : %f\n",flt_f);
+    //printf("flt_test : %d\n",flt_test);
 
-    //caractère
-    char c_car;
-    printf("Taille en octet du caractere : %d\n",sizeof(c_car));
+    //printf("Entrez un entier\n");
+    //scanf("%d",&n_test);
+    printf("n_test : %d\n",n_test);
 
-    //bool bln_booleen;
-    //opérateurs
-    int n_a=255;
-    int n_b=0;
+    putchar(c_car);//affichage non formate
 
-    //printf ("%d", (n_a>=n_b));
-    //ECRIRE
-    printf ("val de n_a : %d\n",n_a);
-    printf ("val de n_b : %d\n",n_b);
-    printf ("val de n_a : %d et n_b : %d\n",n_a,n_b);
-    printf ("val de n_a : %x et n_b : %x\n",n_a,n_b);
-    //LIRE
-    printf ("Saisir un entier dans n_a\n");
-    scanf ("%d",&n_a);
-    printf ("Saisir un entier dans n_b\n");
-    scanf ("%d",&n_b);
-    printf ("val de n_a : %d et n_b : %d\n",n_a,n_b);
-    //<=
-    //>=
-    //== égalité
-    //!= (pas =)
-    //+ addition
-    //- soustraction
-    /*'/' division*/
-    //% (MODULO)
-    //=
-    //, séquencement
-    //& et (&& et logique avec séquencement)
-    //| ou (|| ou logique avec séquencement)
-    //! (not)
-    /*Incrémentation
-    //++
-    //-- */
-    //+= ex : res+=a => res=res+a
-    //-=
-    //'/='
-    //*=
+    /*printf("Entrez un entier : \n");
+    scanf("%d",&n_a);
+    printf("Entrez un entier : \n");
+    scanf("%d",&n_b);*/
 
+    printf("Entrez deux entier :\n");
+    scanf("%d%d",&n_a,&n_b);
+
+    printf("n_a : %d\n",n_a);
+    printf("n_b : %d\n",n_b);
+
+    fflush(stdin);//vider le tampon
+    printf("Entrez un caractere : \n");
+    scanf("%c",&c_car);
+
+    printf("c_car : %c",c_car);
+
+    fflush(stdin);//vider le tampon
+    printf("Entrez un caractere :\n");
+    c_car=getchar();//Saisie de format
+
+    printf("c_car : %c", c_car);
     return 0;
-    //void = procédure???
-    //int = fonction???
 }
