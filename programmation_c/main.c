@@ -59,6 +59,6 @@ int main()
     //*=
 
     return 0;
-    //void = procédure
-    //int = fonction
+    //void = procédure???
+    //int = fonction???
 }
