@@ -30,8 +30,35 @@ int main()
     char c_car;
     printf("Taille en octet du caractere : %d\n",sizeof(c_car));
 
+    //bool bln_booleen;
+    //opérateurs
+    int n_a=0;
+    int n_b=0;
+
+    printf ("%d", (n_a>=n_b));
+
+    //<=
+    //>=
+    //== égalité
+    //!= (pas =)
+    //+ addition
+    //- soustraction
+    /*'/' division*/
+    //% (MODULO)
+    //=
+    //, séquencement
+    //& et (&& et logique avec séquencement)
+    //| ou (|| ou logique avec séquencement)
+    //! (not)
+    /*Incrémentation
+    //++
+    //-- */
+    //+= ex : res+=a => res=res+a
+    //-=
+    //'/='
+    //*=
+
     return 0;
     //void = procédure
     //int = fonction
-    //
 }
