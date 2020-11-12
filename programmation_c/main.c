@@ -1,15 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-<<<<<<< Updated upstream
-=======
 #define NBI 10
->>>>>>> Stashed changes
 
 int main()
 {
-<<<<<<< Updated upstream
     printf("Hello world !\n);
-=======
     int n_a=0,n_b=0;
 
     //Condition
@@ -76,6 +71,5 @@ int main()
         n_i++;
     }
 
->>>>>>> Stashed changes
     return 0;
 }
