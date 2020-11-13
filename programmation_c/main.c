@@ -22,7 +22,7 @@ int main()
         som += n;
         i++;
     }
-    printf("Somme : %d\n", som);*/
+    printf("Somme : %d\n", som);
 
     //ex 1 do while
     i = 0;
