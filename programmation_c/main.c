@@ -1,11 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-<<<<<<< Updated upstream
-
-int main()
-{
-    printf("Hello world !\n);
-=======
 #define NBI 4
 
 int main()
@@ -84,6 +78,5 @@ int main()
         printf("\n");
     }
 
->>>>>>> Stashed changes
     return 0;
 }
