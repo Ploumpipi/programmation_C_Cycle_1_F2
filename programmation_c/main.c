@@ -23,7 +23,7 @@ int main()
     return 0;
 }
 
-void lanceDeDe(int*jetDeDes)
+void lanceDeDe(int *jetDeDes)
 {
     *jetDeDes=(rand()%(12-2+1))+2;
 }
@@ -41,20 +41,20 @@ void positionJoueur(int *position, int *jetDeDes)
     {
         *position = EXCEPTION;
     }
+    if (*position>ARRIVEE)
+    {
+        *position = ARRIVEE - (*position - ARRIVEE);
+    }
     if (*position == MORT)
     {
         *position = DEPART;
         printf("C'est la case mort, retour a la case depart\n");
     }
-    if (*position>ARRIVEE)
-    {
-        *position = ARRIVEE - nbrcase;
-        nbrcase=*position-ARRIVEE;
-    }
+
 }
 
-void victoire (int position)
+void victoire (int *position)
 {
-    if (position == ARRIVEE)
+    if (*position == ARRIVEE)
         printf("Bravo vous avez gagne\n");
 }
