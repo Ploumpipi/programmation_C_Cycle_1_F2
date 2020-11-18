@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define NBVIE 5
 
 int main()
@@ -31,7 +32,7 @@ int main()
     return 0;
 }
 
-void generec(char carac, int nb)
+char generec(char carac, int nb)
 {
     char mot;
     int i;
@@ -43,7 +44,7 @@ void generec(char carac, int nb)
     return mot;
 }
 
-void remplace(char mot1[], char mot2, char car)
+char remplace(char mot1, char mot2, char car)
 {
     char temp;
     int i;
@@ -57,3 +58,6 @@ void remplace(char mot1[], char mot2, char car)
         return temp;
     }
 }
+
+//Calculer la longueur du mot rentré
+
