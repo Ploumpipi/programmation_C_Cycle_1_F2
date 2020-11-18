@@ -29,26 +29,18 @@ int main()
     int des1 = 0;
     int des2 = 0;
     int place = init();
-    des1 = jetdedes();
-    des2 = jetdedes();
-
-    /*printf ("%d", des1);
-    printf ("%d", des2);
-
-
-    if (verifdes(des1,des2))
-    {
-        place += des1+des2;
-    }
-
-    place = depoilacement(9, 4, 5);
-    printf ("%d", cplace);*/
-
-        if (Cond_Victoire(66))
-        {
-         printf("OK!\n");
+    do{
+        des1 = jetdedes();
+        des2 = jetdedes();
+        if(verifdes(des1,des2)){
+            place += des1+des2;
+            printf("Vous etes en case %d. \n", place);
+            place = deplacement(place, des1, des2);
+            printf("Vous etes maintenant en case %d. \n", place);
+        }else{
+            printf("Veuillez entrer des nombres valides.\n");
         }
-
+    }while(Cond_Victoire(place) == 0);
     return 0;
 }
 
@@ -60,7 +52,7 @@ int init (){
 
 int jetdedes (){
     int jet;
-    printf ("Entrez un entier entre 2 et 12 :");
+    printf ("Entrez un entier entre 1 et 6 :");
     scanf ("%d",&jet);
     return jet;
 }
@@ -79,14 +71,18 @@ int deplacement( int place, int jet1, int jet2)
 {
     if (place%CMULTIPLE ==0 && place<EXCEPTION)
     {
+        printf("Vous etes sur la case oie, le resultat des des est double.\n");
         place += jet1+jet2;
     }
     if (place > CFIN)
     {
+
         place = CFIN - (place - CFIN);
+        printf("Vous avez depasse la taille du plateau vous retournez en place %d.\n", place);
     }
     if (place == CMORT)
     {
+        printf("Vous etes sur la case tete de mort, vous retournez a la case de depart.\n");
         place = CDEPART;
     }
     return place;
