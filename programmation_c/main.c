@@ -31,7 +31,7 @@ void entreLettre()
     printf("Choisissez une lettre\n");
     scanf("%c",&lettre);
     for(i=0;i<strlen(mot);i++){
-        if(lettre==mot[i]){
+        if(mot[i]==lettre){
             //printf("+1");
             memMot[i]=lettre;
             printf("Vous avez trouvez une lettre il vous reste : %d vie(s)\n",vie);
