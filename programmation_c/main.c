@@ -49,6 +49,8 @@ int main(int argc, char *argv[])
         SDL_RenderFillRect(pRenderer, &rectangleplein);
         //Update rendu (render)
         SDL_RenderPresent(pRenderer);
+        //Appel de la fonction cercle plein
+        //void DrawFillCircle(SDL_Renderer *pRenderer, 50, 400, 30, SDL_Color color);
     }
     SDL_Delay(10000);
 
@@ -63,3 +65,15 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+// Dessine le cercle donné, rempli
+/*void DrawFillCircle(SDL_Renderer *p_renderer, int origin_x, int origin_y, int radius, SDL_Color color)
+{
+    for(double dy = 1; dy <= radius; dy += 1.0){
+        double dx = floor(sqrt((2.0 * radius * dy) - (dy * dy)));
+        SDL_SetRenderDrawColor(p_renderer, color.r, color.g, color.b, color.a);
+        SDL_RenderDrawLine(p_renderer, origin_x - dx, origin_y + dy - radius, origin_x + dx, origin_y + dy - radius);
+        SDL_RenderDrawLine(p_renderer, origin_x - dx, origin_y - dy + radius, origin_x + dx, origin_y - dy + radius);
+    }
+    SDL_SetRenderDrawColor(p_renderer, 0, 0, 0, 0);
+}*/
