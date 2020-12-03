@@ -10,9 +10,11 @@ typedef struct posBat{
 }posBat;
 
 void initBateau(char MatriceEntiers2[TAILLE][TAILLE]);
+void debut_partie();
 int main()
 {
-    char MatriceEntiers2[TAILLE][TAILLE]={{"\0"}};
+    debut_partie();
+    /*char MatriceEntiers2[TAILLE][TAILLE]={{"\0"}};
     initBateau(MatriceEntiers2[TAILLE][TAILLE]);
     int i=0,j=0,nbx=0,nby=1;
     //Bordure de la zone d'eau
@@ -51,10 +53,35 @@ int main()
                 }
             }
         }
-    }
+    }*/
 return 0;
 }
-void initBateau(char MatriceEntiers2[TAILLE][TAILLE])
+void debut_partie()
+{
+    fflush(stdin);
+    char mon_char;
+    //char mon_char='u';
+    //char mon_char='o';
+    int verif=0;
+    do{
+        printf("Voulez vous jouer? O/N\n");
+        mon_char=getchar();
+        mon_char=toupper(mon_char);
+        if(mon_char=='O'){
+            printf("Bienvenue dans la bataille navale d'Alexandre !\n");
+            verif++;
+        }
+        if(mon_char=='N'){
+            printf("Aurevoir\n");
+            verif++;
+        }
+        /*if(mon_char!='O' || mon_char!='N'){
+            printf("Entrez une reponse correcte\n");
+        }*/
+    }while(verif==0);
+}
+
+/*void initBateau(char MatriceEntiers2[TAILLE][TAILLE])
 //Porte avion 5 cases, croiseur 4 cases, 2 contre torpilleur 3 cases, 1 torpilleur 2 cases
 {
     char memMatriceEntiers2[TAILLE][TAILLE], direction=' ';
@@ -136,4 +163,4 @@ void initBateau(char MatriceEntiers2[TAILLE][TAILLE])
 
     }
 
-}
+}*/
