@@ -8,26 +8,6 @@ typedef struct posBat{
     int x;
     int y;
 }posBat;
-/*typedef struct pTorpilleur{
-    int x;
-    int y;
-}pTorpilleur;
-typedef struct pCTorpilleur1{
-    int x;
-    int y;
-}pCTorpilleur1;
-typedef struct pCTorpilleur2{
-    int x;
-    int y;
-}pCTorpilleur2;
-typedef struct pCroiseur{
-    int x;
-    int y;
-}pCroiseur;
-typedef struct pPAvion{
-    int x;
-    int y;
-}pPAvion;*/
 
 void initBateau(char MatriceEntiers2[TAILLE][TAILLE]);
 int main()
