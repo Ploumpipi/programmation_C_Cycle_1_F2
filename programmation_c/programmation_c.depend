@@ -1,5 +1,9 @@
 # depslib dependency file v1.0
-1605182039 source:d:\github\programmation_c_cycle_1_f2\programmation_c\main.c
+1607098404 source:d:\github\programmation_c_cycle_1_f2\programmation_c\main.c
+	"define.h"
+
+1607098512 d:\github\programmation_c_cycle_1_f2\programmation_c\define.h
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 

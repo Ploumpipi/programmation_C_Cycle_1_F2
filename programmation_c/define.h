@@ -15,5 +15,7 @@ typedef struct posBat{
     int x,y;
 }posBat;
 
+extern void initTab(char tableau[TAILLE][TAILLE]);
+extern void afficheTab();
 
 #endif // DEFINE_H_INCLUDED

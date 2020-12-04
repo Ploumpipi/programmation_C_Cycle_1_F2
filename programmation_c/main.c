@@ -1,8 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "define.h"
 
 int main()
 {
-    printf("Hello world !\n");
+    char tableau[TAILLE][TAILLE]={{"\0"}};
+    iniTab(tableau);
+    afficheTab;
     return 0;
 }
