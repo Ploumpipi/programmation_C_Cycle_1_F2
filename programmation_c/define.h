@@ -17,7 +17,7 @@ typedef struct posBat{
 }posBat;
 
 
-void iniTab(int tab[TAILLE][TAILLE]);
+extern void iniTab(int tableau[TAILLE][TAILLE]);
 extern void initPlat(int tableau[TAILLE][TAILLE], int joueur);
 extern void choixPosBat(int longueur_bat, int tableau[TAILLE][TAILLE]);
 extern void verifPos(char pos,posBat position,int tableau[TAILLE][TAILLE],int longueur_bateau);

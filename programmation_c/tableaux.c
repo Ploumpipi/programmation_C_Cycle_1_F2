@@ -1,10 +1,10 @@
 #include "define.h"
 
-void iniTab(int tab[TAILLE][TAILLE])
+void iniTab(int tableau[TAILLE][TAILLE])
 {
     for (int i=0;i<TAILLE;i++){//lignes
         for (int j=0;j<TAILLE;j++){//Colonnes
-            tab[i][j]=0;
+            tableau[i][j]=0;
         }
     }
 }
