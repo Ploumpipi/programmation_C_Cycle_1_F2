@@ -1,5 +1,16 @@
 # depslib dependency file v1.0
-1605182039 source:d:\github\programmation_c_cycle_1_f2\programmation_c\main.c
+1607099627 source:d:\github\programmation_c_cycle_1_f2\programmation_c\main.c
+	"define.h"
+
+1607100294 d:\github\programmation_c_cycle_1_f2\programmation_c\define.h
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	<windows.h>
+
+1607099627 source:d:\github\programmation_c_cycle_1_f2\programmation_c\jeu.c
+	"define.h"
+
+1607092516 source:d:\github\programmation_c_cycle_1_f2\programmation_c\tableaux.c
+	"define.h"
 
