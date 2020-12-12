@@ -1,8 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "head.h"
 
 int main()
 {
-    printf("Hello world !\n");
+    char tableau[LARGEUR][LONGUEUR];
+    struct pos_Pisteur positionP[MAXPISTEUR];
+    int Pisteur;
+    init_tab(tableau);
+    affiche_tab(tableau);
+    refresh_ecran();
+    nombre_pisteur(Pisteur,tableau);
+    placage_Pisteur(Pisteur,tableau,positionP);
+
+
     return 0;
 }

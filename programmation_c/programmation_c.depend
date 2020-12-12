@@ -1,5 +1,12 @@
 # depslib dependency file v1.0
-1605182039 source:d:\github\programmation_c_cycle_1_f2\programmation_c\main.c
+1607788821 source:d:\github\programmation_c_cycle_1_f2\programmation_c\main.c
+	"head.h"
+
+1607788839 d:\github\programmation_c_cycle_1_f2\programmation_c\head.h
 	<stdio.h>
 	<stdlib.h>
+	<windows.h>
+
+1607789391 source:d:\github\programmation_c_cycle_1_f2\programmation_c\plateau.c
+	"head.h"
 
