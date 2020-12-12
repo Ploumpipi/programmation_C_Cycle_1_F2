@@ -17,8 +17,8 @@ typedef struct pos_Pisteur{
 extern void init_tab(char tableau[LARGEUR][LONGUEUR]);
 extern void affiche_tab(char tableau[LARGEUR][LONGUEUR]);
 extern void refresh_ecran();
-extern void nombre_pisteur(int Pisteur, char tableau[LARGEUR][LONGUEUR]);
-extern void placage_Pisteur(int Pisteur, char tableau[LARGEUR][LONGUEUR], struct pos_Pisteur positionP[MAXPISTEUR]);
+extern void nombre_pisteur(int *pPisteur, char tableau[LARGEUR][LONGUEUR]);
+extern void placementP(int *pPisteur, char tableau[LARGEUR][LONGUEUR], struct pos_Pisteur positionP[MAXPISTEUR]);
 
 extern void color(int t,int f);
 

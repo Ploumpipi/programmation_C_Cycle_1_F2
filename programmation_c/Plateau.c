@@ -36,19 +36,11 @@ void affiche_tab(char tableau[LARGEUR][LONGUEUR])
                 color(13,7);
                 printf("* \n ");
             }
-            /*if(tableau[i][j]==0){
-                //Premiere couleur = police, deuxieme couleur = fond
-                color(13,7);
-                printf("* ");
+            if(tableau[i][j]=='P'){
+                color(11,8);
+                printf("P ");
+                color(15,0);
             }
-            if(tableau[i][j]==1){
-                color(0,8);
-                printf("  ");
-            }
-            if(tableau[i][j]==2){
-                color(13,7);
-                printf("* \n");
-            }*/
             color(15,0);
         }
     }
@@ -68,19 +60,27 @@ void refresh_ecran()
     system("cls");
 }
 
-void nombre_pisteur(int Pisteur, char tableau[LARGEUR][LONGUEUR])
+void nombre_pisteur(int *pPisteur, char tableau[LARGEUR][LONGUEUR])
 {
+    int nb_pisteur;
+
     printf("Combien de pisteur voulez-vous?\n");
-    scanf("%d",&Pisteur);
+    scanf("%d",&nb_pisteur);
+    if(nb_pisteur<=MAXPISTEUR){
+        *pPisteur=nb_pisteur;
+    }else{
+        printf("Combien de pisteur voulez-vous?\n");
+        scanf("%d",&nb_pisteur);
+    }
     system("cls");
     affiche_tab(tableau);
 }
 
-void placage_Pisteur(int Pisteur, char tableau[LARGEUR][LONGUEUR], struct pos_Pisteur positionP[MAXPISTEUR])
+void placementP(int *pPisteur, char tableau[LARGEUR][LONGUEUR], struct pos_Pisteur positionP[MAXPISTEUR])
 {
-    int i,hori,verti,a,b;
+    int i,hori,verti,j,k;
 
-    for(i=1;i<=Pisteur;i++)
+    for(i=1;i<=*pPisteur;i++)
     {
         printf("\nEntrez la position de l'axe X du pisteur numero %d (Compris 1 et 29): \n",i);
         scanf("%d",&hori);
@@ -88,24 +88,6 @@ void placage_Pisteur(int Pisteur, char tableau[LARGEUR][LONGUEUR], struct pos_Pi
         scanf("%d",&verti);
         //tableau[verti][hori]=3;//'P'
         tableau[verti][hori]='P';
-        for(a=0; a<LARGEUR;a++){
-            for(b=0; b<LONGUEUR;b++){
-                if(tableau[a][b]=='P'){
-                    color(9,8);
-                    printf(" P");
-                    color(15,0);
-                }
-            }
-        }
-        /*for(a=0; a<LARGEUR;a++){
-            for(b=0; b<LONGUEUR;b++){
-                if(tableau[a][b]==3){
-                    color(9,8);
-                    printf(" P ");
-                    color(15,0);
-                }
-            }
-        }*/
         positionP[i].x=hori;
         positionP[i].y=verti;
 
@@ -116,5 +98,5 @@ void placage_Pisteur(int Pisteur, char tableau[LARGEUR][LONGUEUR], struct pos_Pi
 
 void placement_monstre()
 {
-
+    //Faire un random et TANT QUE le random tombe près d'un pisteur relancer
 }
