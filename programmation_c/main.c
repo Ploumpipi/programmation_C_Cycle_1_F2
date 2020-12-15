@@ -3,15 +3,26 @@
 int main()
 {
     char tableau[LARGEUR][LONGUEUR];
-    struct pos_Pisteur positionP[MAXPISTEUR];
-    int Pisteur;
+    struct pos_Pisteur positionP[MAXPISTEUR];//On définit le tableau des pisteurs
+    int Pisteur, tour=1;//Initialisation des tours et des pisteurs
     int *pPisteur=&Pisteur;
+    int tracesP[LARGEUR][LONGUEUR];
+    int tracesM[LARGEUR][LONGUEUR];
+    init_tab_traces(tracesM,tracesP);
+    pos_Monstre Monstre;
     init_tab(tableau);
     affiche_tab(tableau);
     refresh_ecran();
     nombre_pisteur(&pPisteur,tableau);
 
-    placementP(&pPisteur,tableau,positionP);
+    placementPi(&pPisteur,tableau,positionP);
+    placementMo(tableau,tracesM,&Monstre);
+
+    while(&pPisteur>0){
+        tracesPi(&pPisteur, tracesP, positionP);
+        tracesMo(tracesM, &Monstre, &tour);
+        rapportPi(&pPisteur, positionP, tracesM, tableau);
+    }
 
 
     return 0;
