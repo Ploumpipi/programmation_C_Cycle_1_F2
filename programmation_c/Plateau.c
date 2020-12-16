@@ -53,6 +53,11 @@ void affiche_tab(char tableau[LARGEUR][LONGUEUR])
                 printf("M ");
                 color(15,0);
             }
+            if(tableau[i][j]=='?'){
+                color(14,8);
+                printf("? ");
+                color(15,0);
+            }
             color(15,0);
         }
     }
@@ -127,7 +132,7 @@ void tracesPi(int *pPisteur, int tracesP[LARGEUR][LONGUEUR], struct pos_Pisteur 
     int i;
 
     for(i=1;i<=*pPisteur;i++){
-        tracesP[positionP[i].x][positionP[i].y]=1;
+        tracesP[positionP[i].y][positionP[i].x]=1;
     }
 }
 
@@ -181,7 +186,7 @@ void placementMo(char tableau[LARGEUR][LONGUEUR], int tracesM[LARGEUR][LONGUEUR]
     Monstre->y=i;
 }
 
-void rapportPi(int *pPisteur, struct pos_Pisteur positionP[MAXPISTEUR], int tracesM[LARGEUR][LONGUEUR], char tableau[LARGEUR][LONGUEUR])
+void rapportPi(int *pPisteur, struct pos_Pisteur positionP[MAXPISTEUR], int tracesM[LARGEUR][LONGUEUR], char tableau[LARGEUR][LONGUEUR],int vieMonstre)
 {
     int i, j, k, l, m, caze, fraicheur, rien;
     int caseGauche, caseHaute, caseDroite, caseBas;
@@ -220,7 +225,7 @@ void rapportPi(int *pPisteur, struct pos_Pisteur positionP[MAXPISTEUR], int trac
                     scanf("%c",feu);
                     feu=toupper(feu);
                     if(feu=='T'){//Appel fonction de tir
-                        boum();
+                        boum(vieMonstre);
                     }else{
                         printf("Vous avez choisi de ne pas tirer\n");
                     }
@@ -251,17 +256,46 @@ void init_tab_traces(int tracesM[LARGEUR][LONGUEUR], int tracesP[LARGEUR][LONGUE
     }
 }
 
-void actionPi()
-{
 
+void deplacementPi(int *pPisteur, struct pos_Pisteur positionP[MAXPISTEUR], char tableau[LARGEUR][LONGUEUR])
+{
+    int i,mouvement;
+    for(i=1;i<=*pPisteur;i++){
+        system("cls");
+        tableau[positionP[i].y][positionP[i].x]='?';
+        affiche_tab(tableau);
+        printf("\n\nComment voulez-vous deplacer votre pisteur %d ? (1=Haut, 2=Droite, 3=Bas, 4=Gauche)\n",i);
+        scanf("%d",mouvement);
+        while(mouvement<=0 || mouvement>4){
+            mouvement=0;
+            printf("Le nombre saisi est mauvais, veuillez en rentrer un nouveau pour deplacer votre pisteur %d ? (1=Haut, 2=Droite, 3=Bas, 4=Gauche)\n");
+            scanf("%d",mouvement);
+        }
+        if(mouvement==1){
+            positionP[i].y=positionP[i].y-1;
+        }
+        if(mouvement==2){
+            positionP[i].x=positionP[i].x+1;
+        }
+        if(mouvement==3){
+            positionP[i].y=positionP[i].y+1;
+        }
+        if(mouvement==4){
+            positionP[i].x=positionP[i].x-1;
+        }
+        tableau[positionP[i].y][positionP[i].x]='P';
+        system("cls");
+        affiche_tab(tableau);
+    }
 }
 
-void deplacementPi()
+void boum(int vieMonstre)
 {
-
-}
-
-void boum()
-{
-
+    int tire;
+    srand(time(NULL));
+    tire=(rand()%10)+1;
+    if(tire<=4){
+        vieMonstre--;
+    }
+    printf("%d",vieMonstre);
 }
