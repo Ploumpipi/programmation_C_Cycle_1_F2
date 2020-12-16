@@ -256,7 +256,6 @@ void init_tab_traces(int tracesM[LARGEUR][LONGUEUR], int tracesP[LARGEUR][LONGUE
     }
 }
 
-
 void deplacementPi(int *pPisteur, struct pos_Pisteur positionP[MAXPISTEUR], char tableau[LARGEUR][LONGUEUR])
 {
     int i,mouvement;
@@ -264,6 +263,7 @@ void deplacementPi(int *pPisteur, struct pos_Pisteur positionP[MAXPISTEUR], char
         system("cls");
         tableau[positionP[i].y][positionP[i].x]='?';
         affiche_tab(tableau);
+        tableau[positionP[i].y][positionP[i].x]=' ';
         printf("\n\nComment voulez-vous deplacer votre pisteur %d ? (1=Haut, 2=Droite, 3=Bas, 4=Gauche)\n",i);
         scanf("%d",mouvement);
         while(mouvement<=0 || mouvement>4){
@@ -287,6 +287,30 @@ void deplacementPi(int *pPisteur, struct pos_Pisteur positionP[MAXPISTEUR], char
         system("cls");
         affiche_tab(tableau);
     }
+}
+
+void deplacementMo(pos_Monstre *Monstre, char tableau[LARGEUR][LONGUEUR])
+{
+    int deplacementM;
+
+    srand(time(NULL));
+    deplacementM=(rand()%4)+1;
+    tableau[Monstre->y][Monstre->x]=' ';
+    if(deplacementM==1){
+        Monstre->y=Monstre->y-1;
+    }
+    if(deplacementM==2){
+        Monstre->x=Monstre->x+1;
+    }
+    if(deplacementM==3){
+        Monstre->y=Monstre->y+1;
+    }
+    if(deplacementM==4){
+        Monstre->x=Monstre->x-1;
+    }
+    tableau[Monstre->y][Monstre->x]='M';
+    system("cls");
+    affiche_tab(tableau);
 }
 
 void boum(int vieMonstre)

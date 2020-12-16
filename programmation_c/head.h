@@ -30,6 +30,7 @@ extern void tracesMo(int tracesM[LARGEUR][LONGUEUR], pos_Monstre *Monstre,int *t
 extern void placementMo(char tableau[LARGEUR][LONGUEUR], int tracesM[LARGEUR][LONGUEUR], pos_Monstre *Monstre);
 extern void rapportPi(int *pPisteur, struct pos_Pisteur positionP[MAXPISTEUR], int tracesM[LARGEUR][LONGUEUR], char tableau[LARGEUR][LONGUEUR], int vieMonstre);
 extern void deplacementPi(int *pPisteur, struct pos_Pisteur positionP[MAXPISTEUR], char tableau[LARGEUR][LONGUEUR]);
+extern void deplacementMo(pos_Monstre *Monstre, char tableau[LARGEUR][LONGUEUR]);
 extern void boum(int vieMonstre);
 
 extern void color(int t,int f);

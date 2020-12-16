@@ -23,6 +23,7 @@ int main()
         tracesMo(tracesM, &Monstre, &tour);
         rapportPi(&pPisteur, positionP, tracesM, tableau, vieMonstre);
         deplacementPi(&pPisteur, positionP, tableau);
+        deplacementMo(&Monstre, tableau);
     }
 
 
