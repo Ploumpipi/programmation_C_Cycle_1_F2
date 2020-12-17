@@ -1,0 +1,30 @@
+body{
+	background-image: linear-gradient(grey, darkgrey);
+	background-repeat: no-repeat; /*Permet de choisir la répétition de l'image*/
+	background-attachment: fixed; /*Permet de fixer l'image*/
+}
+
+h1{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline midnightblue;
+}
+
+h2{
+    text-align: unset;
+    padding-left: 50px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: underline midnightblue;
+}
+
+div{
+    border:solid black 1px;
+    border-radius: 20px;
+    background-color: midnightblue;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-style: normal;
+    color: white;
+}

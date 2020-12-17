@@ -19,11 +19,13 @@ int main()
     placementMo(tableau,tracesM,&Monstre);
 
     while(&pPisteur>0 || vieMonstre>0){
+        tour++;
         tracesPi(&pPisteur, tracesP, positionP);
         tracesMo(tracesM, &Monstre, &tour);
         rapportPi(&pPisteur, positionP, tracesM, tableau, vieMonstre);
         deplacementPi(&pPisteur, positionP, tableau);
-        deplacementMo(&Monstre, tableau);
+        deplacementMo(&Monstre, tableau, tracesP, tracesM);
+        information(tour, &pPisteur, vieMonstre);
     }
 
 
